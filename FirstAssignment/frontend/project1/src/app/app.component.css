@@ -1,0 +1,34 @@
+.oplist{
+    padding: 0.2rem;
+    list-style: none;
+}
+
+.oplist > .btn{
+    width: 15rem;
+}
+
+.oplist > .btn .btn-active{
+    background: bisque;
+}
+
+.editor{
+    margin-left: 40px;
+    width: 20rem;
+}
+
+button.control{
+    width:10rem;
+}
+
+div.control-wrapper{
+    margin-top: 10px;
+    margin-left: 40px;
+}
+
+div.alert-wrapper{
+    margin-top: 10px;
+}
+
+.selected{
+    background: rgb(226, 193, 193);
+}

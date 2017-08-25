@@ -1,0 +1,40 @@
+<div class="container">
+  <h1>SCP OPERATORS </h1>
+  <div class="row">
+    <ul>
+      <li *ngFor="let operator of operators" class="oplist">
+        <button class="btn btn-active" [class.selected]="operator.id === selectedOperator" (click)="selectOperator(operator)"> 
+          {{operator.operatorName}} </button>
+      </li>
+    </ul>
+  </div>
+  <div class="row">
+    <input type="text" class="editor" [(ngModel)]="operator" [disabled]="!insert">
+  </div>
+  <div class="row">
+    <div class="control-wrapper">
+      <button class="btn btn-primary control" (click)="toggleInsert()">INSERT</button>
+      <button class=" btn btn-primary control" (click)="delete(template)">DELETE</button>
+      <button class=" btn btn-primary control" (click)="save(template)" [disabled]="!insert">SAVE</button>
+    </div>
+
+  </div>
+  <div class="row alert-wrapper">
+    <alert type="{{alert.type}}" *ngIf="alert.show">
+      <strong> {{alert.title}} </strong> {{alert.message}}
+    </alert>
+  </div>
+
+  <template #template>
+    <div class="modal-header">
+      <h4 class="modal-title pull-left">{{modal.head}}</h4>
+      <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    </div>
+    <div class="modal-body">
+      {{modal.body}}
+    </div>
+  </template>
+
+</div>
